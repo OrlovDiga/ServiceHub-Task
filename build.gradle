@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-starter
+    compile group: 'org.apache.camel', name: 'camel-spring-boot-starter', version: '2.17.0'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-jsonpath-starter
+    compile group: 'org.apache.camel', name: 'camel-jsonpath-starter', version: '3.0.0-M4'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-test-spring
+    testCompile group: 'org.apache.camel', name: 'camel-test-spring', version: '3.0.0-RC1'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-starter
+    compile group: 'org.apache.camel', name: 'camel-spring-boot-starter', version: '3.0.0-RC1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-swagger-java-starter
+    compile group: 'org.apache.camel', name: 'camel-swagger-java-starter', version: '3.0.0-RC1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-jackson-starter
+    compile group: 'org.apache.camel', name: 'camel-jackson-starter', version: '3.0.0-RC1'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-servlet-starter
+    compile group: 'org.apache.camel', name: 'camel-servlet-starter', version: '3.0.0-RC1'
+
+
+
+
+}
+
+test {
+	useJUnitPlatform()
+}
