@@ -71,7 +71,6 @@ public class AdapterRoute extends RouteBuilder {
                 .to("direct:adapter");
 
         from("direct:adapter")
-                .filter().method(MessageA.class, "checkLanguage")
                 .process(exchange -> {
                     MessageA msg = (MessageA) exchange.getIn().getBody();
 
