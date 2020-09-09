@@ -63,7 +63,7 @@ public class AdapterRoute extends RouteBuilder {
                         //.method(MessageA.class, "isEmptyMsg")
                         .to("direct:empty_msg")
                     .otherwise()
-                        .to("direct:adapter")
+                        .to("direct:validation")
                   .endChoice();
 
         from("direct:validation")
