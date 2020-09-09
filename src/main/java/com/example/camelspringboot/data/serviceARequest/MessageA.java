@@ -55,4 +55,24 @@ public class MessageA implements Serializable {
                 ", coordinates=" + coordinates +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MessageA messageA = (MessageA) o;
+
+        if (msg != null ? !msg.equals(messageA.msg) : messageA.msg != null) return false;
+        if (lng != messageA.lng) return false;
+        return coordinates != null ? coordinates.equals(messageA.coordinates) : messageA.coordinates == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = msg != null ? msg.hashCode() : 0;
+        result = 31 * result + (lng != null ? lng.hashCode() : 0);
+        result = 31 * result + (coordinates != null ? coordinates.hashCode() : 0);
+        return result;
+    }
 }
